@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 05</title>
+  </head>
+  <body>
+    <p>
+      Crie um código que, ao clicar no botão, marque o checkbox como “checkado”.
+    </p>
+    <input id="checkbox" disabled />
+
+    <label for="checkbox">checkbox</label>
+
+    <button type="button" id="button">Check</button>
+
+    <script>
+      var btn = document.querySelector("button");
+      var checkbox = document.getElementById("checkbox");
+      btn.onclick = function () {
+        checkbox.disabled = false;
+        checkbox.checked = true;
+      };
+    </script>
+  </body>
+</html>
