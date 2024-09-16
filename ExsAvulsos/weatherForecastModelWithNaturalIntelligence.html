@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de previsão do tempo com inteligência natural</title>
+    <style>
+        :root {
+            font-size: x-large;
+        }
+
+        #tempo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(130, 243, 243, 0.185);
+            padding: 100px;
+            border-radius: 10px;
+            border: 1px solid;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+</body>
+<div id="tempo">
+    <label for="weather">Selecione o tipo de clima hoje:</label>
+    <select id="weather">
+        <option value="">--Faça uma escolha--</option>
+        <option value="sunny">Ensolarado</option>
+        <option value="rainy">Chuvoso</option>
+        <option value="snowing">Nevando</option>
+        <option value="overcast">Nublado</option>
+    </select>
+
+    <p></p>
+
+</div>
+<script>
+    //Script proveniente do site, nada foi modificado, somente lido e compreendido 
+    var select = document.querySelector("select");
+    var para = document.querySelector("p");
+
+    select.addEventListener("change", setWeather);
+
+    function setWeather() {
+        var choice = select.value;
+
+        if (choice === "sunny") {
+            para.textContent =
+                "Está bom e ensolarado lá fora hoje. Use shorts! Vá à praia ou ao parque e tome um sorvete.";
+        } else if (choice === "rainy") {
+            para.textContent =
+                "A chuva está caindo lá fora; leve uma capa de chuva e um guarda-chuva e não fique fora por muito tempo.";
+        } else if (choice === "snowing") {
+            para.textContent =
+                "A neve está caindo – está congelando! Melhor ficar em casa com uma xícara de chocolate quente ou construir um boneco de neve.";
+        } else if (choice === "overcast") {
+            para.textContent =
+                "Não está chovendo, mas o céu está cinzento e sombrio; pode mudar a qualquer minuto, então leve uma capa de chuva para garantir.";
+        } else {
+            para.textContent = "";
+        }
+    }
+</script>
+</body>
+
+</html>
