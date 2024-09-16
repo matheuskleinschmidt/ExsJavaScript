@@ -9,19 +9,19 @@ const quickSort = (arr) => {
     return arr;
   }
 
-  let pivot = arr[0];
-  let leftArr = [];
-  let rightArr = [];
+  let pivo = arr[0];
+  let ArrayEsquerdo = [];
+  let ArrayDireito = [];
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      leftArr.push(arr[i]);
+    if (arr[i] < pivo) {
+      ArrayEsquerdo.push(arr[i]);
     } else {
-      rightArr.push(arr[i]);
+      ArrayDireito.push(arr[i]);
     }
   }
 
-  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+  return [...quickSort(ArrayEsquerdo), pivo, ...quickSort(ArrayDireito)];
 };
 
 console.log(quickSort(arrayList));
