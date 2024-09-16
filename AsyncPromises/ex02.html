@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Dada a seguinte lista de promises que são executadas ao mesmo tempo, crie
+      um código que retorna o resultado da primeira promise resolvida com
+      sucesso, independente se houve erro em alguma delas ou não.
+    </p>
+    <script>
+      const promise1 = Promise.reject(0);
+
+      const promise2 = new Promise((resolve) =>
+        setTimeout(() => resolve("first"), 100)
+      );
+      const promise3 = new Promise((resolve) =>
+        setTimeout(() => resolve("second"), 500)
+      );
+
+      const promises = [promise1, promise2, promise3];
+
+      Promise.any(promises)
+        .then((resultado) => {
+          console.log(resultado);
+        })
+    </script>
+  </body>
+</html>

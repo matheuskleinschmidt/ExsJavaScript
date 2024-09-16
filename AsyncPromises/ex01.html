@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 01</title>
+  </head>
+  <body>
+    <h3>
+      Dado o seguinte código, implemente um tratamento para que quando houver um
+      erro na requisição/promise, exiba-se o erro retornado no console do
+      browser.
+    </h3>
+    <script>
+      fetch(
+        "https://www.google.com/search?q=api+que+retorna+erro&rlz=1C1GCEU_pt-BRBR1127BR1127&oq=api+que+retorna+erro&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCDYzNTBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((erro) => console.log(erro));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 3</title>
+  </head>
+  <body>
+    <p>
+      Refatore o seguinte código para que o mesmo execute as duas requests ao
+      mesmo tempo e retorne o resultado das requests.
+    </p>
+    <script>
+      async function fetchMultipleData() {
+        const responsePromise1 = await fetch(
+          "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+        );
+        const responsePromise2 = await fetch(
+          "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+        );
+        const [r1, r2] = await Promise.all([
+          responsePromise1,
+          responsePromise2,
+        ]);
+
+        console.log(r1);
+        console.log(r2);
+
+        return [r1, r2];
+      }
+
+      fetchMultipleData();
+    </script>
+  </body>
+</html>
