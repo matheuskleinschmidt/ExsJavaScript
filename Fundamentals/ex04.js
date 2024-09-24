@@ -1,12 +1,16 @@
 // Crie uma função que recebe um número como parâmetro e retorne true caso
 // o mesmo seja divisível por 10 e false caso não seja.
 
+// function ex04(num) {
+//   if (num % 10 === 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
 function ex04(num) {
-  if (num % 10 === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return num % 10 === 0
 }
 
 function getRandomInt(min, max) {

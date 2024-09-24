@@ -6,6 +6,7 @@ console.log(arrayList.sort());
 
 const quickSort = (arr) => {
   if (arr.length <= 1) {
+    debugger
     return arr;
   }
 
