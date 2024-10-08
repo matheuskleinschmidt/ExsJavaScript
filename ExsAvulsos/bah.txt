@@ -1,0 +1,8 @@
+locreA função fs.readFile é usada para ler um arquivo de forma assíncrona.
+A função exibirConteudoDoArquivo é passada como callback para fs.readFile. Essa função será executada depois que o arquivo for lido.
+O callback recebe dois parâmetros: erro e dados. Se ocorrer um erro durante a leitura do arquivo, ele será tratado e exibido. Caso contrário, o conteúdo do arquivo será exibido no console.
+Como a operação de leitura é assíncrona, a última linha do código (que imprime a mensagem) será executada antes da leitura do arquivo ser concluída.
+Comportamento:
+Quando esse código é executado, ele mostra primeiro a mensagem "Essa linha será executada antes da leitura do arquivo, por causa da natureza assíncrona." e, em seguida, o conteúdo do arquivo (ou um erro, se houver) assim que a leitura for concluída.
+
+Este é um exemplo clássico de uso de callbacks para lidar com operações assíncronas em Node.js.
