@@ -18,51 +18,39 @@
   <script>
     let session = null;
 
-    // Chat with the Gemini Nano
     document.getElementById('chat').addEventListener('click', async function () {
-      // grab the input value and reset input
       const input = document.getElementById('input');
       const message = input.value;
       input.value = '';
 
-      // append user message to UI
       appendMessage('User', message);
 
-      // prompt the message to the AI
       const response = await session.prompt(message);
 
-      // append AI response to the UI
       appendMessage('AI', response);
     });
 
-    // Destory the session
     document.getElementById('destory').addEventListener('click', async function () {
       if (session) {
         await session.destroy();
-        // session = null;
         alert('Session destroyed');
       }
     });
 
-    // Create a new session on document ready
     document.addEventListener('DOMContentLoaded', async function () {
-      // Check if window.ai is available to create text session
       if (!session && (await window.ai?.assistant.capabilities())?.available !== 'readily') {
         alert('window.ai is not available in your browser')
       } else {
-        // create a new session
         session = await window.ai.assistant.create();
       }
     });
 
-    // create UI for message
     function createMessage(role, message) {
       const li = document.createElement('li');
       li.textContent = `${role}: ${message}`;
       return li;
     }
 
-    // append message to the UI
     function appendMessage(role, message) {
       const messages = document.getElementById('messages');
       messages.appendChild(createMessage(role, message));
